@@ -1,0 +1,2592 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Project 2 &#8212; Computing in Context - Josefina De Solminihac</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'project_2';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Project 3" href="project_3.html" />
+    <link rel="prev" title="Project 1" href="project_1.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Computing in Context - Josefina De Solminihac</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="index.html">
+                    <no title>
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="project_1.html">Project 1</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Project 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="project_3.html">Project 3</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/project_2.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Project 2</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="project-2">
+<h1>Project 2<a class="headerlink" href="#project-2" title="Link to this heading">#</a></h1>
+<p>For this project, I wanted to work with data from my country because, in the medium term, I hope to return and work there, ideally for the government. I believe it’s beneficial for my learning process to apply the concepts learned in this course to data I may use in the future.</p>
+<p>I chose higher education enrollment as my focus.</p>
+<p>The data was downloaded from the following link:
+<a class="reference external" href="https://datosabiertos.mineduc.cl/matricula-por-estudiante-2/">https://datosabiertos.mineduc.cl/matricula-por-estudiante-2/</a></p>
+<p>The file name in Spanish is “Matrícula por estudiante 2024,” which translates to “Enrollment per Student 2024.”</p>
+<p>I downloaded data for 2019 through 2024 to analyze the evolution of enrollment over time.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Import pandas library and csv module</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">csv</span>
+<span class="kn">import</span> <span class="nn">plotly.express</span> <span class="k">as</span> <span class="nn">px</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#I downloaded the data to my computer. In this step, I read the CSV and loaded a data frame so I could work with it. </span>
+<span class="n">enrollment24</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;/Users/josefinadesolminihac/Desktop/computing/Project2/DataenrollmentChile/2024.csv&quot;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;;&#39;</span> <span class="p">)</span>
+<span class="n">enrollment23</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;/Users/josefinadesolminihac/Desktop/computing/Project2/DataenrollmentChile/2023.csv&quot;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;;&#39;</span> <span class="p">)</span>
+<span class="n">enrollment22</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;/Users/josefinadesolminihac/Desktop/computing/Project2/DataenrollmentChile/2022.csv&quot;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;;&#39;</span> <span class="p">)</span>
+<span class="n">enrollment21</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;/Users/josefinadesolminihac/Desktop/computing/Project2/DataenrollmentChile/2021.csv&quot;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;;&#39;</span> <span class="p">)</span>
+<span class="n">enrollment20</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;/Users/josefinadesolminihac/Desktop/computing/Project2/DataenrollmentChile/2020.csv&quot;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;;&#39;</span> <span class="p">)</span>
+<span class="n">enrollment19</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;/Users/josefinadesolminihac/Desktop/computing/Project2/DataenrollmentChile/2019.csv&quot;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;;&#39;</span> <span class="p">)</span>
+<span class="n">latlon</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;/Users/josefinadesolminihac/Desktop/Intro to Infographics/Final Exercise/Latitud - Longitud Chile.csv&#39;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;,&#39;</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/hk/7xwmy2rx1wndbwgft1hwjm3h0000gn/T/ipykernel_80729/1441070996.py:2: DtypeWarning:
+
+Columns (49) have mixed types. Specify dtype option on import or set low_memory=False.
+
+/var/folders/hk/7xwmy2rx1wndbwgft1hwjm3h0000gn/T/ipykernel_80729/1441070996.py:3: DtypeWarning:
+
+Columns (49,50) have mixed types. Specify dtype option on import or set low_memory=False.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># I want to see how the data looks like. I did this step with all the years to see if they had the same columns. </span>
+<span class="n">enrollment24</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># I want to see how the data looks like</span>
+<span class="n">enrollment24</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>cat_periodo</th>
+      <th>id</th>
+      <th>codigo_unico</th>
+      <th>mrun</th>
+      <th>gen_alu</th>
+      <th>fec_nac_alu</th>
+      <th>rango_edad</th>
+      <th>anio_ing_carr_ori</th>
+      <th>sem_ing_carr_ori</th>
+      <th>anio_ing_carr_act</th>
+      <th>...</th>
+      <th>area_carrera_generica</th>
+      <th>cine_f_13_area</th>
+      <th>cine_f_13_subarea</th>
+      <th>acreditada_carr</th>
+      <th>acreditada_inst</th>
+      <th>acre_inst_desde_hasta</th>
+      <th>acre_inst_anio</th>
+      <th>costo_proceso_titulacion</th>
+      <th>costo_obtencion_titulo_diploma</th>
+      <th>forma_ingreso</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2024</td>
+      <td>1251127</td>
+      <td>I117S1C35J4V1</td>
+      <td>5.0</td>
+      <td>2</td>
+      <td>199105</td>
+      <td>30 a 34 años</td>
+      <td>2024</td>
+      <td>1</td>
+      <td>2024</td>
+      <td>...</td>
+      <td>Técnico en Prevención de Riesgos</td>
+      <td>Servicios</td>
+      <td>Servicios de Higiene y Salud Ocupacional</td>
+      <td>NO ACREDITADA</td>
+      <td>ACREDITADA</td>
+      <td>01/06/2022 AL 01/06/2026</td>
+      <td>4.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1- Ingreso Directo (regular)</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2024</td>
+      <td>119610</td>
+      <td>I45S2C4J1V1</td>
+      <td>26.0</td>
+      <td>2</td>
+      <td>200212</td>
+      <td>20 a 24 años</td>
+      <td>2022</td>
+      <td>1</td>
+      <td>2022</td>
+      <td>...</td>
+      <td>Derecho</td>
+      <td>Administración de Empresas y Derecho</td>
+      <td>Derecho</td>
+      <td>NO ACREDITADA</td>
+      <td>ACREDITADA</td>
+      <td>17/12/2021 AL 16/12/2027</td>
+      <td>6.0</td>
+      <td>0</td>
+      <td>0,7</td>
+      <td>1- Ingreso Directo (regular)</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2024</td>
+      <td>893498</td>
+      <td>I31S2C41J1V1</td>
+      <td>35.0</td>
+      <td>1</td>
+      <td>199711</td>
+      <td>25 a 29 años</td>
+      <td>2017</td>
+      <td>1</td>
+      <td>2017</td>
+      <td>...</td>
+      <td>Enfermería</td>
+      <td>Salud y Bienestar</td>
+      <td>Salud</td>
+      <td>NO ACREDITADA</td>
+      <td>ACREDITADA</td>
+      <td>29/10/2019 AL 29/10/2024</td>
+      <td>5.0</td>
+      <td>258445</td>
+      <td>70000</td>
+      <td>1- Ingreso Directo (regular)</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2024</td>
+      <td>2004738</td>
+      <td>I70S1C900J1V1</td>
+      <td>43.0</td>
+      <td>2</td>
+      <td>199007</td>
+      <td>30 a 34 años</td>
+      <td>2020</td>
+      <td>1</td>
+      <td>2020</td>
+      <td>...</td>
+      <td>Doctorado en Ciencias Sociales</td>
+      <td>Ciencias Sociales, Periodismo e Información</td>
+      <td>Ciencias Sociales y del Comportamiento</td>
+      <td>ACREDITADA</td>
+      <td>ACREDITADA</td>
+      <td>22/12/2018 AL 22/12/2025</td>
+      <td>7.0</td>
+      <td>0</td>
+      <td>112000</td>
+      <td>1- Ingreso Directo (regular)</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2024</td>
+      <td>812831</td>
+      <td>I143S27C34J2V1</td>
+      <td>51.0</td>
+      <td>2</td>
+      <td>198305</td>
+      <td>40 y más años</td>
+      <td>2022</td>
+      <td>1</td>
+      <td>2022</td>
+      <td>...</td>
+      <td>Técnico en Enfermería</td>
+      <td>Salud y Bienestar</td>
+      <td>Salud</td>
+      <td>NO ACREDITADA</td>
+      <td>ACREDITADA</td>
+      <td>23/11/2022 AL 23/11/2027</td>
+      <td>5.0</td>
+      <td>858000</td>
+      <td>0</td>
+      <td>1- Ingreso Directo (regular)</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 52 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Because they have the same columns I wanted to have all the information in one big dataframe</span>
+<span class="n">dfs</span> <span class="o">=</span> <span class="p">[</span><span class="n">enrollment24</span><span class="p">,</span> <span class="n">enrollment23</span><span class="p">,</span> <span class="n">enrollment22</span><span class="p">,</span> <span class="n">enrollment21</span><span class="p">,</span> <span class="n">enrollment20</span><span class="p">,</span> <span class="n">enrollment19</span><span class="p">]</span>
+<span class="n">enrollment19_24</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">dfs</span><span class="p">)</span>
+<span class="n">enrollment19_24</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>cat_periodo</th>
+      <th>id</th>
+      <th>codigo_unico</th>
+      <th>mrun</th>
+      <th>gen_alu</th>
+      <th>fec_nac_alu</th>
+      <th>rango_edad</th>
+      <th>anio_ing_carr_ori</th>
+      <th>sem_ing_carr_ori</th>
+      <th>anio_ing_carr_act</th>
+      <th>...</th>
+      <th>area_carrera_generica</th>
+      <th>cine_f_13_area</th>
+      <th>cine_f_13_subarea</th>
+      <th>acreditada_carr</th>
+      <th>acreditada_inst</th>
+      <th>acre_inst_desde_hasta</th>
+      <th>acre_inst_anio</th>
+      <th>costo_proceso_titulacion</th>
+      <th>costo_obtencion_titulo_diploma</th>
+      <th>forma_ingreso</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2024</td>
+      <td>1251127</td>
+      <td>I117S1C35J4V1</td>
+      <td>5.0</td>
+      <td>2</td>
+      <td>199105</td>
+      <td>30 a 34 años</td>
+      <td>2024</td>
+      <td>1</td>
+      <td>2024</td>
+      <td>...</td>
+      <td>Técnico en Prevención de Riesgos</td>
+      <td>Servicios</td>
+      <td>Servicios de Higiene y Salud Ocupacional</td>
+      <td>NO ACREDITADA</td>
+      <td>ACREDITADA</td>
+      <td>01/06/2022 AL 01/06/2026</td>
+      <td>4.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1- Ingreso Directo (regular)</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2024</td>
+      <td>119610</td>
+      <td>I45S2C4J1V1</td>
+      <td>26.0</td>
+      <td>2</td>
+      <td>200212</td>
+      <td>20 a 24 años</td>
+      <td>2022</td>
+      <td>1</td>
+      <td>2022</td>
+      <td>...</td>
+      <td>Derecho</td>
+      <td>Administración de Empresas y Derecho</td>
+      <td>Derecho</td>
+      <td>NO ACREDITADA</td>
+      <td>ACREDITADA</td>
+      <td>17/12/2021 AL 16/12/2027</td>
+      <td>6.0</td>
+      <td>0</td>
+      <td>0,7</td>
+      <td>1- Ingreso Directo (regular)</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2024</td>
+      <td>893498</td>
+      <td>I31S2C41J1V1</td>
+      <td>35.0</td>
+      <td>1</td>
+      <td>199711</td>
+      <td>25 a 29 años</td>
+      <td>2017</td>
+      <td>1</td>
+      <td>2017</td>
+      <td>...</td>
+      <td>Enfermería</td>
+      <td>Salud y Bienestar</td>
+      <td>Salud</td>
+      <td>NO ACREDITADA</td>
+      <td>ACREDITADA</td>
+      <td>29/10/2019 AL 29/10/2024</td>
+      <td>5.0</td>
+      <td>258445</td>
+      <td>70000</td>
+      <td>1- Ingreso Directo (regular)</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2024</td>
+      <td>2004738</td>
+      <td>I70S1C900J1V1</td>
+      <td>43.0</td>
+      <td>2</td>
+      <td>199007</td>
+      <td>30 a 34 años</td>
+      <td>2020</td>
+      <td>1</td>
+      <td>2020</td>
+      <td>...</td>
+      <td>Doctorado en Ciencias Sociales</td>
+      <td>Ciencias Sociales, Periodismo e Información</td>
+      <td>Ciencias Sociales y del Comportamiento</td>
+      <td>ACREDITADA</td>
+      <td>ACREDITADA</td>
+      <td>22/12/2018 AL 22/12/2025</td>
+      <td>7.0</td>
+      <td>0</td>
+      <td>112000</td>
+      <td>1- Ingreso Directo (regular)</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2024</td>
+      <td>812831</td>
+      <td>I143S27C34J2V1</td>
+      <td>51.0</td>
+      <td>2</td>
+      <td>198305</td>
+      <td>40 y más años</td>
+      <td>2022</td>
+      <td>1</td>
+      <td>2022</td>
+      <td>...</td>
+      <td>Técnico en Enfermería</td>
+      <td>Salud y Bienestar</td>
+      <td>Salud</td>
+      <td>NO ACREDITADA</td>
+      <td>ACREDITADA</td>
+      <td>23/11/2022 AL 23/11/2027</td>
+      <td>5.0</td>
+      <td>858000</td>
+      <td>0</td>
+      <td>1- Ingreso Directo (regular)</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>1268478</th>
+      <td>2019</td>
+      <td>2041045</td>
+      <td>I70S1C760J2V1</td>
+      <td>NaN</td>
+      <td>1</td>
+      <td>199008</td>
+      <td>25 a 29 años</td>
+      <td>2017</td>
+      <td>1</td>
+      <td>2017</td>
+      <td>...</td>
+      <td>Magister en Administración y Comercio</td>
+      <td>Administración de Empresas y Derecho</td>
+      <td>Educación Comercial y Administración</td>
+      <td>ACREDITADA</td>
+      <td>ACREDITADA</td>
+      <td>22/12/2018 AL 22/12/2025</td>
+      <td>7.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>6- Ingreso especial para estudiantes extranjeros</td>
+    </tr>
+    <tr>
+      <th>1268479</th>
+      <td>2019</td>
+      <td>2055836</td>
+      <td>I86S1C924J1V1</td>
+      <td>NaN</td>
+      <td>2</td>
+      <td>198805</td>
+      <td>30 a 34 años</td>
+      <td>2019</td>
+      <td>1</td>
+      <td>2019</td>
+      <td>...</td>
+      <td>Postítulo en Ciencias Sociales</td>
+      <td>Ciencias Sociales, Periodismo e Información</td>
+      <td>Periodismo e Información</td>
+      <td>NO ACREDITADA</td>
+      <td>ACREDITADA</td>
+      <td>01/12/2018 AL 01/12/2025</td>
+      <td>7.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>6- Ingreso especial para estudiantes extranjeros</td>
+    </tr>
+    <tr>
+      <th>1268480</th>
+      <td>2019</td>
+      <td>2014078</td>
+      <td>I20S1C47J4V1</td>
+      <td>NaN</td>
+      <td>1</td>
+      <td>197502</td>
+      <td>40 y más años</td>
+      <td>2018</td>
+      <td>1</td>
+      <td>2018</td>
+      <td>...</td>
+      <td>Magister en Educación</td>
+      <td>Educación</td>
+      <td>Educación</td>
+      <td>NO ACREDITADA</td>
+      <td>ACREDITADA</td>
+      <td>24/12/2017 AL 24/12/2021</td>
+      <td>4.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>6- Ingreso especial para estudiantes extranjeros</td>
+    </tr>
+    <tr>
+      <th>1268481</th>
+      <td>2019</td>
+      <td>2038820</td>
+      <td>I70S1C520J1V1</td>
+      <td>NaN</td>
+      <td>1</td>
+      <td>199402</td>
+      <td>25 a 29 años</td>
+      <td>2019</td>
+      <td>1</td>
+      <td>2019</td>
+      <td>...</td>
+      <td>Doctorado en Ciencias Básicas</td>
+      <td>Ciencias naturales, matemáticas y estadística</td>
+      <td>Ciencias Físicas</td>
+      <td>ACREDITADA</td>
+      <td>ACREDITADA</td>
+      <td>22/12/2018 AL 22/12/2025</td>
+      <td>7.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>6- Ingreso especial para estudiantes extranjeros</td>
+    </tr>
+    <tr>
+      <th>1268482</th>
+      <td>2019</td>
+      <td>628229</td>
+      <td>I155S2C39J2V1</td>
+      <td>NaN</td>
+      <td>2</td>
+      <td>200008</td>
+      <td>15 a 19 años</td>
+      <td>2019</td>
+      <td>1</td>
+      <td>2019</td>
+      <td>...</td>
+      <td>Administración de Empresas e Ing. Asociadas</td>
+      <td>Administración de Empresas y Derecho</td>
+      <td>Educación Comercial y Administración</td>
+      <td>NO ACREDITADA</td>
+      <td>NO ACREDITADA</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1- Ingreso Directo (regular)</td>
+    </tr>
+  </tbody>
+</table>
+<p>7815459 rows × 52 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Because the names of the columns are in Spanish, and I&#39;m not planning to use all columns, I will create a new data frame with the columns that I&#39;m planning to use and change the names to English. </span>
+<span class="n">enrollment19_24</span><span class="o">.</span><span class="n">columns</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;cat_periodo&#39;, &#39;id&#39;, &#39;codigo_unico&#39;, &#39;mrun&#39;, &#39;gen_alu&#39;, &#39;fec_nac_alu&#39;,
+       &#39;rango_edad&#39;, &#39;anio_ing_carr_ori&#39;, &#39;sem_ing_carr_ori&#39;,
+       &#39;anio_ing_carr_act&#39;, &#39;sem_ing_carr_act&#39;, &#39;tipo_inst_1&#39;, &#39;tipo_inst_2&#39;,
+       &#39;tipo_inst_3&#39;, &#39;cod_inst&#39;, &#39;nomb_inst&#39;, &#39;cod_sede&#39;, &#39;nomb_sede&#39;,
+       &#39;cod_carrera&#39;, &#39;nomb_carrera&#39;, &#39;modalidad&#39;, &#39;jornada&#39;, &#39;version&#39;,
+       &#39;tipo_plan_carr&#39;, &#39;dur_estudio_carr&#39;, &#39;dur_proceso_tit&#39;,
+       &#39;dur_total_carr&#39;, &#39;region_sede&#39;, &#39;provincia_sede&#39;, &#39;comuna_sede&#39;,
+       &#39;nivel_global&#39;, &#39;nivel_carrera_1&#39;, &#39;nivel_carrera_2&#39;,
+       &#39;requisito_ingreso&#39;, &#39;vigencia_carrera&#39;, &#39;formato_valores&#39;,
+       &#39;valor_matricula&#39;, &#39;valor_arancel&#39;, &#39;codigo_demre&#39;, &#39;area_conocimiento&#39;,
+       &#39;cine_f_97_area&#39;, &#39;cine_f_97_subarea&#39;, &#39;area_carrera_generica&#39;,
+       &#39;cine_f_13_area&#39;, &#39;cine_f_13_subarea&#39;, &#39;acreditada_carr&#39;,
+       &#39;acreditada_inst&#39;, &#39;acre_inst_desde_hasta&#39;, &#39;acre_inst_anio&#39;,
+       &#39;costo_proceso_titulacion&#39;, &#39;costo_obtencion_titulo_diploma&#39;,
+       &#39;forma_ingreso&#39;],
+      dtype=&#39;object&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Choose the columns that I will use</span>
+<span class="n">filetered_data</span> <span class="o">=</span> <span class="n">enrollment19_24</span><span class="p">[[</span><span class="s1">&#39;cat_periodo&#39;</span><span class="p">,</span> <span class="s1">&#39;codigo_unico&#39;</span><span class="p">,</span> <span class="s1">&#39;gen_alu&#39;</span><span class="p">,</span> <span class="s1">&#39;fec_nac_alu&#39;</span><span class="p">,</span>
+       <span class="s1">&#39;rango_edad&#39;</span><span class="p">,</span><span class="s1">&#39;anio_ing_carr_act&#39;</span><span class="p">,</span> <span class="s1">&#39;tipo_inst_1&#39;</span><span class="p">,</span> <span class="s1">&#39;tipo_inst_2&#39;</span><span class="p">,</span>
+       <span class="s1">&#39;tipo_inst_3&#39;</span><span class="p">,</span> <span class="s1">&#39;cod_inst&#39;</span><span class="p">,</span> <span class="s1">&#39;nomb_inst&#39;</span><span class="p">,</span> <span class="s1">&#39;cod_sede&#39;</span><span class="p">,</span> <span class="s1">&#39;nomb_sede&#39;</span><span class="p">,</span>
+       <span class="s1">&#39;cod_carrera&#39;</span><span class="p">,</span> <span class="s1">&#39;nomb_carrera&#39;</span><span class="p">,</span> <span class="s1">&#39;region_sede&#39;</span><span class="p">,</span> <span class="s1">&#39;provincia_sede&#39;</span><span class="p">,</span> <span class="s1">&#39;comuna_sede&#39;</span><span class="p">,</span>
+       <span class="s1">&#39;valor_matricula&#39;</span><span class="p">,</span> <span class="s1">&#39;valor_arancel&#39;</span><span class="p">,</span> <span class="s1">&#39;area_conocimiento&#39;</span><span class="p">,</span> <span class="s1">&#39;acreditada_carr&#39;</span><span class="p">,</span>
+       <span class="s1">&#39;acreditada_inst&#39;</span><span class="p">,</span> <span class="s1">&#39;acre_inst_desde_hasta&#39;</span><span class="p">,</span> <span class="s1">&#39;acre_inst_anio&#39;</span><span class="p">,</span>
+       <span class="s1">&#39;costo_proceso_titulacion&#39;</span><span class="p">,</span> <span class="s1">&#39;costo_obtencion_titulo_diploma&#39;</span><span class="p">]]</span>
+<span class="n">filetered_data</span><span class="o">.</span><span class="n">columns</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;cat_periodo&#39;, &#39;codigo_unico&#39;, &#39;gen_alu&#39;, &#39;fec_nac_alu&#39;, &#39;rango_edad&#39;,
+       &#39;anio_ing_carr_act&#39;, &#39;tipo_inst_1&#39;, &#39;tipo_inst_2&#39;, &#39;tipo_inst_3&#39;,
+       &#39;cod_inst&#39;, &#39;nomb_inst&#39;, &#39;cod_sede&#39;, &#39;nomb_sede&#39;, &#39;cod_carrera&#39;,
+       &#39;nomb_carrera&#39;, &#39;region_sede&#39;, &#39;provincia_sede&#39;, &#39;comuna_sede&#39;,
+       &#39;valor_matricula&#39;, &#39;valor_arancel&#39;, &#39;area_conocimiento&#39;,
+       &#39;acreditada_carr&#39;, &#39;acreditada_inst&#39;, &#39;acre_inst_desde_hasta&#39;,
+       &#39;acre_inst_anio&#39;, &#39;costo_proceso_titulacion&#39;,
+       &#39;costo_obtencion_titulo_diploma&#39;],
+      dtype=&#39;object&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Rename the columns so they are in English and more descriptive. </span>
+<span class="c1"># Define a dictionary with current column names as keys and new names as values</span>
+<span class="n">column_renames</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;cat_periodo&#39;</span><span class="p">:</span> <span class="s1">&#39;Year&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;codigo_unico&#39;</span><span class="p">:</span> <span class="s1">&#39;Unique Code&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;gen_alu&#39;</span><span class="p">:</span> <span class="s1">&#39;Student Gender&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;fec_nac_alu&#39;</span><span class="p">:</span> <span class="s1">&#39;Birth Date&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;rango_edad&#39;</span><span class="p">:</span> <span class="s1">&#39;Age Range&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;anio_ing_carr_act&#39;</span><span class="p">:</span> <span class="s1">&#39;Year Entered Current Program&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;tipo_inst_1&#39;</span><span class="p">:</span> <span class="s1">&#39;Institution Type_1&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;tipo_inst_2&#39;</span><span class="p">:</span> <span class="s1">&#39;Institution Type_2&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;tipo_inst_3&#39;</span><span class="p">:</span> <span class="s1">&#39;Institution Type_3&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;cod_inst&#39;</span><span class="p">:</span> <span class="s1">&#39;Institution Code&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;nomb_inst&#39;</span><span class="p">:</span> <span class="s1">&#39;Institution Name&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;cod_sede&#39;</span><span class="p">:</span> <span class="s1">&#39;Campus Code&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;nomb_sede&#39;</span><span class="p">:</span> <span class="s1">&#39;Campus Name&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;cod_carrera&#39;</span><span class="p">:</span> <span class="s1">&#39;Program Code&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;nomb_carrera&#39;</span><span class="p">:</span> <span class="s1">&#39;Program Name&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;region_sede&#39;</span><span class="p">:</span> <span class="s1">&#39;Campus Region&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;provincia_sede&#39;</span><span class="p">:</span> <span class="s1">&#39;Campus Province&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;comuna_sede&#39;</span><span class="p">:</span> <span class="s1">&#39;Campus Commune&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;valor_matricula&#39;</span><span class="p">:</span> <span class="s1">&#39;Tuition Value&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;valor_arancel&#39;</span><span class="p">:</span> <span class="s1">&#39;Fee Value&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;area_conocimiento&#39;</span><span class="p">:</span> <span class="s1">&#39;Knowledge Area&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;costo_proceso_titulacion&#39;</span><span class="p">:</span> <span class="s1">&#39;Graduation Process Cost&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;costo_obtencion_titulo_diploma&#39;</span><span class="p">:</span> <span class="s1">&#39;Diploma_Cost&#39;</span>
+<span class="p">}</span>
+
+<span class="n">updated_data</span> <span class="o">=</span> <span class="n">filetered_data</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="n">column_renames</span><span class="p">)</span>
+<span class="n">updated_data</span><span class="o">.</span><span class="n">columns</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;Year&#39;, &#39;Unique Code&#39;, &#39;Student Gender&#39;, &#39;Birth Date&#39;, &#39;Age Range&#39;,
+       &#39;Year Entered Current Program&#39;, &#39;Institution Type_1&#39;,
+       &#39;Institution Type_2&#39;, &#39;Institution Type_3&#39;, &#39;Institution Code&#39;,
+       &#39;Institution Name&#39;, &#39;Campus Code&#39;, &#39;Campus Name&#39;, &#39;Program Code&#39;,
+       &#39;Program Name&#39;, &#39;Campus Region&#39;, &#39;Campus Province&#39;, &#39;Campus Commune&#39;,
+       &#39;Tuition Value&#39;, &#39;Fee Value&#39;, &#39;Knowledge Area&#39;, &#39;acreditada_carr&#39;,
+       &#39;acreditada_inst&#39;, &#39;acre_inst_desde_hasta&#39;, &#39;acre_inst_anio&#39;,
+       &#39;Graduation Process Cost&#39;, &#39;Diploma_Cost&#39;],
+      dtype=&#39;object&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Now I want to see if I need to change the type of certain columns. For example, year, birth date, and year entered current program</span>
+<span class="n">updated_data</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+Index: 7815459 entries, 0 to 1268482
+Data columns (total 27 columns):
+ #   Column                        Dtype  
+---  ------                        -----  
+ 0   Year                          int64  
+ 1   Unique Code                   object 
+ 2   Student Gender                int64  
+ 3   Birth Date                    int64  
+ 4   Age Range                     object 
+ 5   Year Entered Current Program  int64  
+ 6   Institution Type_1            object 
+ 7   Institution Type_2            object 
+ 8   Institution Type_3            object 
+ 9   Institution Code              int64  
+ 10  Institution Name              object 
+ 11  Campus Code                   int64  
+ 12  Campus Name                   object 
+ 13  Program Code                  int64  
+ 14  Program Name                  object 
+ 15  Campus Region                 object 
+ 16  Campus Province               object 
+ 17  Campus Commune                object 
+ 18  Tuition Value                 float64
+ 19  Fee Value                     float64
+ 20  Knowledge Area                object 
+ 21  acreditada_carr               object 
+ 22  acreditada_inst               object 
+ 23  acre_inst_desde_hasta         object 
+ 24  acre_inst_anio                float64
+ 25  Graduation Process Cost       object 
+ 26  Diploma_Cost                  object 
+dtypes: float64(3), int64(7), object(17)
+memory usage: 1.6+ GB
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#I tried changing the type int64 on the dates to date type but had problems with the visualizations. </span>
+
+<span class="c1">#updated_data[&quot;Year&quot;] = pd.to_datetime(updated_data[&quot;Year&quot;], format=&quot;%Y&quot;)</span>
+<span class="c1">#updated_data[&quot;Year Entered Current Program&quot;] = pd.to_datetime(updated_data[&quot;Year Entered Current Program&quot;], format=&quot;%Y&quot;)</span>
+<span class="c1">#updated_data.info()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#I changed the gender type because it appeared as an integer and was categorical. </span>
+<span class="n">updated_data</span><span class="p">[</span><span class="s2">&quot;Student Gender&quot;</span><span class="p">]</span><span class="o">=</span><span class="n">updated_data</span><span class="p">[</span><span class="s2">&quot;Student Gender&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
+<span class="n">updated_data</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+Index: 7815459 entries, 0 to 1268482
+Data columns (total 27 columns):
+ #   Column                        Dtype  
+---  ------                        -----  
+ 0   Year                          int32  
+ 1   Unique Code                   object 
+ 2   Student Gender                object 
+ 3   Birth Date                    int64  
+ 4   Age Range                     object 
+ 5   Year Entered Current Program  int32  
+ 6   Institution Type_1            object 
+ 7   Institution Type_2            object 
+ 8   Institution Type_3            object 
+ 9   Institution Code              int64  
+ 10  Institution Name              object 
+ 11  Campus Code                   int64  
+ 12  Campus Name                   object 
+ 13  Program Code                  int64  
+ 14  Program Name                  object 
+ 15  Campus Region                 object 
+ 16  Campus Province               object 
+ 17  Campus Commune                object 
+ 18  Tuition Value                 float64
+ 19  Fee Value                     float64
+ 20  Knowledge Area                object 
+ 21  acreditada_carr               object 
+ 22  acreditada_inst               object 
+ 23  acre_inst_desde_hasta         object 
+ 24  acre_inst_anio                float64
+ 25  Graduation Process Cost       object 
+ 26  Diploma_Cost                  object 
+dtypes: float64(3), int32(2), int64(4), object(18)
+memory usage: 1.6+ GB
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Only kept the columns that I&#39;m planning to use</span>
+<span class="n">onlyyears_data</span> <span class="o">=</span> <span class="n">updated_data</span><span class="p">[[</span> <span class="s1">&#39;Year&#39;</span><span class="p">,</span> <span class="s1">&#39;Unique Code&#39;</span><span class="p">,</span> <span class="s1">&#39;Student Gender&#39;</span><span class="p">,</span><span class="s1">&#39;Institution Name&#39;</span><span class="p">,</span> <span class="s1">&#39;Campus Region&#39;</span><span class="p">,</span> <span class="s1">&#39;Institution Type_1&#39;</span><span class="p">]]</span>
+<span class="n">onlyyears_data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Year</th>
+      <th>Unique Code</th>
+      <th>Student Gender</th>
+      <th>Institution Name</th>
+      <th>Campus Region</th>
+      <th>Institution Type_1</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2024</td>
+      <td>I117S1C35J4V1</td>
+      <td>2</td>
+      <td>IP IACC</td>
+      <td>Metropolitana</td>
+      <td>Institutos Profesionales</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2024</td>
+      <td>I45S2C4J1V1</td>
+      <td>2</td>
+      <td>UNIVERSIDAD DEL DESARROLLO</td>
+      <td>Metropolitana</td>
+      <td>Universidades</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2024</td>
+      <td>I31S2C41J1V1</td>
+      <td>1</td>
+      <td>UNIVERSIDAD AUTONOMA DE CHILE</td>
+      <td>Maule</td>
+      <td>Universidades</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2024</td>
+      <td>I70S1C900J1V1</td>
+      <td>2</td>
+      <td>UNIVERSIDAD DE CHILE</td>
+      <td>Metropolitana</td>
+      <td>Universidades</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2024</td>
+      <td>I143S27C34J2V1</td>
+      <td>2</td>
+      <td>IP AIEP</td>
+      <td>Metropolitana</td>
+      <td>Institutos Profesionales</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#For the first visualization, I wanted to see how enrollment has changed over time. So, I grouped them by year, counting the number of students enrolled. </span>
+<span class="n">all_years</span> <span class="o">=</span> <span class="n">onlyyears_data</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Year&#39;</span><span class="p">)[</span><span class="s1">&#39;Unique Code&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">size</span><span class="p">()</span><span class="o">.</span><span class="n">to_frame</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;Total Students Enrolled&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="n">all_years</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Year</th>
+      <th>Total Students Enrolled</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2019</td>
+      <td>1268483</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2020</td>
+      <td>1220898</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2021</td>
+      <td>1294699</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2022</td>
+      <td>1304132</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2023</td>
+      <td>1341433</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>2024</td>
+      <td>1385814</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#For this first figure I choose a line graph to show the change over time of enrollment. </span>
+
+<span class="n">fig1</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">line</span><span class="p">(</span>
+    <span class="n">all_years</span><span class="p">,</span>
+    <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Year&#39;</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Total Students Enrolled&#39;</span><span class="p">,</span>
+    <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Total Students Enrolled Over Time&#39;</span><span class="p">)</span>
+<span class="n">fig1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>                            <div id="4ef5dd38-6b2c-42ed-9c0c-e884bb483f52" class="plotly-graph-div" style="height:525px; width:100%;"></div>            <script type="text/javascript">                require(["plotly"], function(Plotly) {                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("4ef5dd38-6b2c-42ed-9c0c-e884bb483f52")) {                    Plotly.newPlot(                        "4ef5dd38-6b2c-42ed-9c0c-e884bb483f52",                        [{"hovertemplate":"Year=%{x}\u003cbr\u003eTotal Students Enrolled=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"","line":{"color":"#636efa","dash":"solid"},"marker":{"symbol":"circle"},"mode":"lines","name":"","orientation":"v","showlegend":false,"x":[2019,2020,2021,2022,2023,2024],"xaxis":"x","y":[1268483,1220898,1294699,1304132,1341433,1385814],"yaxis":"y","type":"scatter"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmapgl":[{"type":"heatmapgl","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"}}},"xaxis":{"anchor":"y","domain":[0.0,1.0],"title":{"text":"Year"}},"yaxis":{"anchor":"x","domain":[0.0,1.0],"title":{"text":"Total Students Enrolled"}},"legend":{"tracegroupgap":0},"title":{"text":"Total Students Enrolled Over Time"}},                        {"responsive": true}                    ).then(function(){
+                            
+var gd = document.getElementById('4ef5dd38-6b2c-42ed-9c0c-e884bb483f52');
+var x = new MutationObserver(function (mutations, observer) {{
+        var display = window.getComputedStyle(gd).display;
+        if (!display || display === 'none') {{
+            console.log([gd, 'removed!']);
+            Plotly.purge(gd);
+            observer.disconnect();
+        }}
+}});
+
+// Listen for the removal of the full notebook cells
+var notebookContainer = gd.closest('#notebook-container');
+if (notebookContainer) {{
+    x.observe(notebookContainer, {childList: true});
+}}
+
+// Listen for the clearing of the current output cell
+var outputEl = gd.closest('.output');
+if (outputEl) {{
+    x.observe(outputEl, {childList: true});
+}}
+
+                        })                };                });            </script>        </div></div></div>
+</div>
+<p>First, I’d like to explain the general structure of the academic year in Chile. In Chile, the academic year starts in March and ends in December. While some students begin their studies mid-semester (similar to the J-term at SIPA), the majority follow the standard process: they take the admissions test in December and start their academic year in March of the following year.</p>
+<p>In this graph, we observe an increasing trend in student enrollment, except for 2020. This exception is understandable, given that 2020 was the year of the COVID-19 pandemic. Since the pandemic began in Chile around mid-March, the same month the academic year starts, it makes sense that many students chose not to enroll in university. However, aside from this anomaly, the data clearly shows a steady upward trend in enrollment over time.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#I want to create a second visualization now to see if there is a difference in female and male enrolment and the evolution through the years. </span>
+<span class="n">gender</span> <span class="o">=</span> <span class="n">onlyyears_data</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;Year&quot;</span><span class="p">,</span> <span class="s2">&quot;Student Gender&quot;</span><span class="p">])[</span><span class="s2">&quot;Unique Code&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">size</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;Count&quot;</span><span class="p">)</span>
+<span class="n">gender</span><span class="p">[</span><span class="s2">&quot;Student Gender&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">gender</span><span class="p">[</span><span class="s2">&quot;Student Gender&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">({</span><span class="s2">&quot;1&quot;</span><span class="p">:</span> <span class="s2">&quot;Men&quot;</span><span class="p">,</span> <span class="s2">&quot;2&quot;</span><span class="p">:</span> <span class="s2">&quot;Women&quot;</span><span class="p">})</span>
+<span class="n">gender</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Year</th>
+      <th>Student Gender</th>
+      <th>Count</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2019</td>
+      <td>Men</td>
+      <td>595637</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2019</td>
+      <td>Women</td>
+      <td>672846</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2020</td>
+      <td>Men</td>
+      <td>568913</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2020</td>
+      <td>Women</td>
+      <td>651985</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2021</td>
+      <td>Men</td>
+      <td>593534</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>2021</td>
+      <td>Women</td>
+      <td>701165</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>2022</td>
+      <td>Men</td>
+      <td>602296</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>2022</td>
+      <td>Women</td>
+      <td>701836</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>2023</td>
+      <td>Men</td>
+      <td>623543</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>2023</td>
+      <td>Women</td>
+      <td>717890</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>2024</td>
+      <td>Men</td>
+      <td>647133</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>2024</td>
+      <td>Women</td>
+      <td>738681</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig2</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">line</span><span class="p">(</span>
+    <span class="n">gender</span><span class="p">,</span>
+    <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Year&#39;</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Count&#39;</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="s1">&#39;Student Gender&#39;</span><span class="p">,</span>
+    <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Total Students Enrolled Over Time by Gender&#39;</span><span class="p">,</span>
+    <span class="n">labels</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;year&#39;</span><span class="p">:</span> <span class="s1">&#39;Year&#39;</span><span class="p">,</span> <span class="s1">&#39;Count&#39;</span><span class="p">:</span> <span class="s1">&#39;Total Students Enrolled&#39;</span><span class="p">,</span> <span class="s1">&#39;Student Gender&#39;</span><span class="p">:</span><span class="s1">&#39;Student Gender&#39;</span><span class="p">})</span>
+<span class="n">fig2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>                            <div id="6c0d3554-fd7f-4a3d-bc6c-13ba2d03e097" class="plotly-graph-div" style="height:525px; width:100%;"></div>            <script type="text/javascript">                require(["plotly"], function(Plotly) {                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("6c0d3554-fd7f-4a3d-bc6c-13ba2d03e097")) {                    Plotly.newPlot(                        "6c0d3554-fd7f-4a3d-bc6c-13ba2d03e097",                        [{"hovertemplate":"Student Gender=Men\u003cbr\u003eYear=%{x}\u003cbr\u003eTotal Students Enrolled=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"Men","line":{"color":"#636efa","dash":"solid"},"marker":{"symbol":"circle"},"mode":"lines","name":"Men","orientation":"v","showlegend":true,"x":[2019,2020,2021,2022,2023,2024],"xaxis":"x","y":[595637,568913,593534,602296,623543,647133],"yaxis":"y","type":"scatter"},{"hovertemplate":"Student Gender=Women\u003cbr\u003eYear=%{x}\u003cbr\u003eTotal Students Enrolled=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"Women","line":{"color":"#EF553B","dash":"solid"},"marker":{"symbol":"circle"},"mode":"lines","name":"Women","orientation":"v","showlegend":true,"x":[2019,2020,2021,2022,2023,2024],"xaxis":"x","y":[672846,651985,701165,701836,717890,738681],"yaxis":"y","type":"scatter"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmapgl":[{"type":"heatmapgl","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"}}},"xaxis":{"anchor":"y","domain":[0.0,1.0],"title":{"text":"Year"}},"yaxis":{"anchor":"x","domain":[0.0,1.0],"title":{"text":"Total Students Enrolled"}},"legend":{"title":{"text":"Student Gender"},"tracegroupgap":0},"title":{"text":"Total Students Enrolled Over Time by Gender"}},                        {"responsive": true}                    ).then(function(){
+                            
+var gd = document.getElementById('6c0d3554-fd7f-4a3d-bc6c-13ba2d03e097');
+var x = new MutationObserver(function (mutations, observer) {{
+        var display = window.getComputedStyle(gd).display;
+        if (!display || display === 'none') {{
+            console.log([gd, 'removed!']);
+            Plotly.purge(gd);
+            observer.disconnect();
+        }}
+}});
+
+// Listen for the removal of the full notebook cells
+var notebookContainer = gd.closest('#notebook-container');
+if (notebookContainer) {{
+    x.observe(notebookContainer, {childList: true});
+}}
+
+// Listen for the clearing of the current output cell
+var outputEl = gd.closest('.output');
+if (outputEl) {{
+    x.observe(outputEl, {childList: true});
+}}
+
+                        })                };                });            </script>        </div></div></div>
+</div>
+<p>We can see that both males and females follow the same trend. As has been observed for several years, more women enroll in higher education institutions than men.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#I want to create a second visualization now to see if there is a difference in female and male enrolment and the evolution through the years. </span>
+<span class="n">typeofinstitution</span> <span class="o">=</span> <span class="n">onlyyears_data</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;Year&quot;</span><span class="p">,</span> <span class="s2">&quot;Institution Type_1&quot;</span><span class="p">])[</span><span class="s2">&quot;Unique Code&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">size</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;Count&quot;</span><span class="p">)</span>
+<span class="n">typeofinstitution</span><span class="p">[</span><span class="s2">&quot;Institution Type_1&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">typeofinstitution</span><span class="p">[</span><span class="s2">&quot;Institution Type_1&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">({</span><span class="s2">&quot;Institutos Profesionales&quot;</span><span class="p">:</span> <span class="s2">&quot;Professional Institutes&quot;</span><span class="p">,</span> <span class="s2">&quot;Universidades&quot;</span><span class="p">:</span> <span class="s2">&quot;Universities&quot;</span><span class="p">,</span> <span class="s2">&quot;Centros de Formación Técnica&quot;</span><span class="p">:</span> <span class="s2">&quot;Technical Training Centers&quot;</span><span class="p">})</span>
+<span class="n">typeofinstitution</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Year</th>
+      <th>Institution Type_1</th>
+      <th>Count</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2019</td>
+      <td>Technical Training Centers</td>
+      <td>137928</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2019</td>
+      <td>Professional Institutes</td>
+      <td>381412</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2019</td>
+      <td>Universities</td>
+      <td>749143</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2020</td>
+      <td>Technical Training Centers</td>
+      <td>130346</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2020</td>
+      <td>Professional Institutes</td>
+      <td>362030</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>2020</td>
+      <td>Universities</td>
+      <td>728522</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>2021</td>
+      <td>Technical Training Centers</td>
+      <td>134475</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>2021</td>
+      <td>Professional Institutes</td>
+      <td>379838</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>2021</td>
+      <td>Universities</td>
+      <td>780386</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>2022</td>
+      <td>Technical Training Centers</td>
+      <td>131739</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>2022</td>
+      <td>Professional Institutes</td>
+      <td>397705</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>2022</td>
+      <td>Universities</td>
+      <td>774688</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>2023</td>
+      <td>Technical Training Centers</td>
+      <td>136730</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>2023</td>
+      <td>Professional Institutes</td>
+      <td>419431</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>2023</td>
+      <td>Universities</td>
+      <td>785272</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>2024</td>
+      <td>Technical Training Centers</td>
+      <td>145230</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>2024</td>
+      <td>Professional Institutes</td>
+      <td>426334</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>2024</td>
+      <td>Universities</td>
+      <td>814250</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig3</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">line</span><span class="p">(</span>
+    <span class="n">typeofinstitution</span><span class="p">,</span>
+    <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Year&#39;</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Count&#39;</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="s1">&#39;Institution Type_1&#39;</span><span class="p">,</span>
+    <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Total Students Enrolled Over Time by Institution Type&#39;</span><span class="p">,</span>
+    <span class="n">labels</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;year&#39;</span><span class="p">:</span> <span class="s1">&#39;Year&#39;</span><span class="p">,</span> <span class="s1">&#39;Count&#39;</span><span class="p">:</span> <span class="s1">&#39;Total Students Enrolled&#39;</span><span class="p">,</span> <span class="s1">&#39;Institution Type_1&#39;</span><span class="p">:</span><span class="s1">&#39;Institution Type&#39;</span><span class="p">})</span>
+<span class="n">fig3</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>                            <div id="c7124198-3be8-455a-8c14-a5ba956238e8" class="plotly-graph-div" style="height:525px; width:100%;"></div>            <script type="text/javascript">                require(["plotly"], function(Plotly) {                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("c7124198-3be8-455a-8c14-a5ba956238e8")) {                    Plotly.newPlot(                        "c7124198-3be8-455a-8c14-a5ba956238e8",                        [{"hovertemplate":"Institution Type=Technical Training Centers\u003cbr\u003eYear=%{x}\u003cbr\u003eTotal Students Enrolled=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"Technical Training Centers","line":{"color":"#636efa","dash":"solid"},"marker":{"symbol":"circle"},"mode":"lines","name":"Technical Training Centers","orientation":"v","showlegend":true,"x":[2019,2020,2021,2022,2023,2024],"xaxis":"x","y":[137928,130346,134475,131739,136730,145230],"yaxis":"y","type":"scatter"},{"hovertemplate":"Institution Type=Professional Institutes\u003cbr\u003eYear=%{x}\u003cbr\u003eTotal Students Enrolled=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"Professional Institutes","line":{"color":"#EF553B","dash":"solid"},"marker":{"symbol":"circle"},"mode":"lines","name":"Professional Institutes","orientation":"v","showlegend":true,"x":[2019,2020,2021,2022,2023,2024],"xaxis":"x","y":[381412,362030,379838,397705,419431,426334],"yaxis":"y","type":"scatter"},{"hovertemplate":"Institution Type=Universities\u003cbr\u003eYear=%{x}\u003cbr\u003eTotal Students Enrolled=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"Universities","line":{"color":"#00cc96","dash":"solid"},"marker":{"symbol":"circle"},"mode":"lines","name":"Universities","orientation":"v","showlegend":true,"x":[2019,2020,2021,2022,2023,2024],"xaxis":"x","y":[749143,728522,780386,774688,785272,814250],"yaxis":"y","type":"scatter"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmapgl":[{"type":"heatmapgl","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"}}},"xaxis":{"anchor":"y","domain":[0.0,1.0],"title":{"text":"Year"}},"yaxis":{"anchor":"x","domain":[0.0,1.0],"title":{"text":"Total Students Enrolled"}},"legend":{"title":{"text":"Institution Type"},"tracegroupgap":0},"title":{"text":"Total Students Enrolled Over Time by Institution Type"}},                        {"responsive": true}                    ).then(function(){
+                            
+var gd = document.getElementById('c7124198-3be8-455a-8c14-a5ba956238e8');
+var x = new MutationObserver(function (mutations, observer) {{
+        var display = window.getComputedStyle(gd).display;
+        if (!display || display === 'none') {{
+            console.log([gd, 'removed!']);
+            Plotly.purge(gd);
+            observer.disconnect();
+        }}
+}});
+
+// Listen for the removal of the full notebook cells
+var notebookContainer = gd.closest('#notebook-container');
+if (notebookContainer) {{
+    x.observe(notebookContainer, {childList: true});
+}}
+
+// Listen for the clearing of the current output cell
+var outputEl = gd.closest('.output');
+if (outputEl) {{
+    x.observe(outputEl, {childList: true});
+}}
+
+                        })                };                });            </script>        </div></div></div>
+</div>
+<p>In Chile, there are three types of institutions recognized by the Ministry of Education that can grant professional and technical degrees: Universities, Professional Institutes, and Technical Training Centers. With this visualization, I aimed to analyze changes over time by institution type. However, due to the significant difference in the number of students enrolled in each type, it is challenging to determine whether there was a substantial change during this period. What this graph clearly shows is that universities have the highest number of enrolled students, followed by professional institutes, and finally, technical training centers.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">typeofinstitution1</span> <span class="o">=</span> <span class="n">typeofinstitution</span><span class="p">[</span><span class="n">typeofinstitution</span><span class="p">[</span><span class="s1">&#39;Institution Type_1&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;Universities&#39;</span><span class="p">]</span>
+<span class="n">fig4</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">line</span><span class="p">(</span>
+    <span class="n">typeofinstitution1</span><span class="p">,</span>
+    <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Year&#39;</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Count&#39;</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="s1">&#39;Institution Type_1&#39;</span><span class="p">,</span>
+    <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Total Students Enrolled Over Time in Universities&#39;</span><span class="p">,</span>
+    <span class="n">labels</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;year&#39;</span><span class="p">:</span> <span class="s1">&#39;Year&#39;</span><span class="p">,</span> <span class="s1">&#39;Count&#39;</span><span class="p">:</span> <span class="s1">&#39;Total Students Enrolled&#39;</span><span class="p">,</span> <span class="s1">&#39;Institution Type_1&#39;</span><span class="p">:</span><span class="s1">&#39;Institution Type&#39;</span><span class="p">})</span>
+<span class="n">fig4</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>                            <div id="c618f04d-1866-436c-8ac7-6ed688679e85" class="plotly-graph-div" style="height:525px; width:100%;"></div>            <script type="text/javascript">                require(["plotly"], function(Plotly) {                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("c618f04d-1866-436c-8ac7-6ed688679e85")) {                    Plotly.newPlot(                        "c618f04d-1866-436c-8ac7-6ed688679e85",                        [{"hovertemplate":"Institution Type=Universities\u003cbr\u003eYear=%{x}\u003cbr\u003eTotal Students Enrolled=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"Universities","line":{"color":"#636efa","dash":"solid"},"marker":{"symbol":"circle"},"mode":"lines","name":"Universities","orientation":"v","showlegend":true,"x":[2019,2020,2021,2022,2023,2024],"xaxis":"x","y":[749143,728522,780386,774688,785272,814250],"yaxis":"y","type":"scatter"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmapgl":[{"type":"heatmapgl","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"}}},"xaxis":{"anchor":"y","domain":[0.0,1.0],"title":{"text":"Year"}},"yaxis":{"anchor":"x","domain":[0.0,1.0],"title":{"text":"Total Students Enrolled"}},"legend":{"title":{"text":"Institution Type"},"tracegroupgap":0},"title":{"text":"Total Students Enrolled Over Time in Universities"}},                        {"responsive": true}                    ).then(function(){
+                            
+var gd = document.getElementById('c618f04d-1866-436c-8ac7-6ed688679e85');
+var x = new MutationObserver(function (mutations, observer) {{
+        var display = window.getComputedStyle(gd).display;
+        if (!display || display === 'none') {{
+            console.log([gd, 'removed!']);
+            Plotly.purge(gd);
+            observer.disconnect();
+        }}
+}});
+
+// Listen for the removal of the full notebook cells
+var notebookContainer = gd.closest('#notebook-container');
+if (notebookContainer) {{
+    x.observe(notebookContainer, {childList: true});
+}}
+
+// Listen for the clearing of the current output cell
+var outputEl = gd.closest('.output');
+if (outputEl) {{
+    x.observe(outputEl, {childList: true});
+}}
+
+                        })                };                });            </script>        </div></div></div>
+</div>
+<p>Now, I will present three separate graphs, each focusing on one of the three types of institutions. The first graph is for universities. Similar to the general trend, we observe a decrease in enrollment in 2020, followed by a recovery in 2021, another decrease in 2022, which appears unusual, and then an increase in 2023 and 2024.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">typeofinstitution1</span> <span class="o">=</span> <span class="n">typeofinstitution</span><span class="p">[</span><span class="n">typeofinstitution</span><span class="p">[</span><span class="s1">&#39;Institution Type_1&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;Technical Training Centers&#39;</span><span class="p">]</span>
+<span class="n">fig5</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">line</span><span class="p">(</span>
+    <span class="n">typeofinstitution1</span><span class="p">,</span>
+    <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Year&#39;</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Count&#39;</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="s1">&#39;Institution Type_1&#39;</span><span class="p">,</span>
+    <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Total Students Enrolled Over Time in Technical Training Centers&#39;</span><span class="p">,</span>
+    <span class="n">labels</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;year&#39;</span><span class="p">:</span> <span class="s1">&#39;Year&#39;</span><span class="p">,</span> <span class="s1">&#39;Count&#39;</span><span class="p">:</span> <span class="s1">&#39;Total Students Enrolled&#39;</span><span class="p">,</span> <span class="s1">&#39;Institution Type_1&#39;</span><span class="p">:</span><span class="s1">&#39;Institution Type&#39;</span><span class="p">})</span>
+<span class="n">fig5</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>                            <div id="94906e0e-ca98-4a62-9239-49f1b6ca18aa" class="plotly-graph-div" style="height:525px; width:100%;"></div>            <script type="text/javascript">                require(["plotly"], function(Plotly) {                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("94906e0e-ca98-4a62-9239-49f1b6ca18aa")) {                    Plotly.newPlot(                        "94906e0e-ca98-4a62-9239-49f1b6ca18aa",                        [{"hovertemplate":"Institution Type=Technical Training Centers\u003cbr\u003eYear=%{x}\u003cbr\u003eTotal Students Enrolled=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"Technical Training Centers","line":{"color":"#636efa","dash":"solid"},"marker":{"symbol":"circle"},"mode":"lines","name":"Technical Training Centers","orientation":"v","showlegend":true,"x":[2019,2020,2021,2022,2023,2024],"xaxis":"x","y":[137928,130346,134475,131739,136730,145230],"yaxis":"y","type":"scatter"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmapgl":[{"type":"heatmapgl","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"}}},"xaxis":{"anchor":"y","domain":[0.0,1.0],"title":{"text":"Year"}},"yaxis":{"anchor":"x","domain":[0.0,1.0],"title":{"text":"Total Students Enrolled"}},"legend":{"title":{"text":"Institution Type"},"tracegroupgap":0},"title":{"text":"Total Students Enrolled Over Time in Technical Training Centers"}},                        {"responsive": true}                    ).then(function(){
+                            
+var gd = document.getElementById('94906e0e-ca98-4a62-9239-49f1b6ca18aa');
+var x = new MutationObserver(function (mutations, observer) {{
+        var display = window.getComputedStyle(gd).display;
+        if (!display || display === 'none') {{
+            console.log([gd, 'removed!']);
+            Plotly.purge(gd);
+            observer.disconnect();
+        }}
+}});
+
+// Listen for the removal of the full notebook cells
+var notebookContainer = gd.closest('#notebook-container');
+if (notebookContainer) {{
+    x.observe(notebookContainer, {childList: true});
+}}
+
+// Listen for the clearing of the current output cell
+var outputEl = gd.closest('.output');
+if (outputEl) {{
+    x.observe(outputEl, {childList: true});
+}}
+
+                        })                };                });            </script>        </div></div></div>
+</div>
+<p>In this second graph, we observe the evolution of enrollment in Technical Training Centers. The trend closely mirrors that of universities, with a decrease in enrollment in 2022.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">typeofinstitution1</span> <span class="o">=</span> <span class="n">typeofinstitution</span><span class="p">[</span><span class="n">typeofinstitution</span><span class="p">[</span><span class="s1">&#39;Institution Type_1&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;Professional Institutes&#39;</span><span class="p">]</span>
+<span class="n">fig6</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">line</span><span class="p">(</span>
+    <span class="n">typeofinstitution1</span><span class="p">,</span>
+    <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Year&#39;</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Count&#39;</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="s1">&#39;Institution Type_1&#39;</span><span class="p">,</span>
+    <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Total Students Enrolled Over Time in Professional Institutes&#39;</span><span class="p">,</span>
+    <span class="n">labels</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;year&#39;</span><span class="p">:</span> <span class="s1">&#39;Year&#39;</span><span class="p">,</span> <span class="s1">&#39;Count&#39;</span><span class="p">:</span> <span class="s1">&#39;Total Students Enrolled&#39;</span><span class="p">,</span> <span class="s1">&#39;Institution Type_1&#39;</span><span class="p">:</span><span class="s1">&#39;Institution Type&#39;</span><span class="p">})</span>
+<span class="n">fig6</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>                            <div id="b49cf7dc-ac0d-4165-a4c9-e70ef94925f2" class="plotly-graph-div" style="height:525px; width:100%;"></div>            <script type="text/javascript">                require(["plotly"], function(Plotly) {                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("b49cf7dc-ac0d-4165-a4c9-e70ef94925f2")) {                    Plotly.newPlot(                        "b49cf7dc-ac0d-4165-a4c9-e70ef94925f2",                        [{"hovertemplate":"Institution Type=Professional Institutes\u003cbr\u003eYear=%{x}\u003cbr\u003eTotal Students Enrolled=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"Professional Institutes","line":{"color":"#636efa","dash":"solid"},"marker":{"symbol":"circle"},"mode":"lines","name":"Professional Institutes","orientation":"v","showlegend":true,"x":[2019,2020,2021,2022,2023,2024],"xaxis":"x","y":[381412,362030,379838,397705,419431,426334],"yaxis":"y","type":"scatter"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmapgl":[{"type":"heatmapgl","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"}}},"xaxis":{"anchor":"y","domain":[0.0,1.0],"title":{"text":"Year"}},"yaxis":{"anchor":"x","domain":[0.0,1.0],"title":{"text":"Total Students Enrolled"}},"legend":{"title":{"text":"Institution Type"},"tracegroupgap":0},"title":{"text":"Total Students Enrolled Over Time by Institution Type"}},                        {"responsive": true}                    ).then(function(){
+                            
+var gd = document.getElementById('b49cf7dc-ac0d-4165-a4c9-e70ef94925f2');
+var x = new MutationObserver(function (mutations, observer) {{
+        var display = window.getComputedStyle(gd).display;
+        if (!display || display === 'none') {{
+            console.log([gd, 'removed!']);
+            Plotly.purge(gd);
+            observer.disconnect();
+        }}
+}});
+
+// Listen for the removal of the full notebook cells
+var notebookContainer = gd.closest('#notebook-container');
+if (notebookContainer) {{
+    x.observe(notebookContainer, {childList: true});
+}}
+
+// Listen for the clearing of the current output cell
+var outputEl = gd.closest('.output');
+if (outputEl) {{
+    x.observe(outputEl, {childList: true});
+}}
+
+                        })                };                });            </script>        </div></div></div>
+</div>
+<p>In this third graph, we observe the evolution of enrollment in Professional Institutes. Unlike universities and technical training centers, this institution type shows a consistent increase in enrollment every year following 2020.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Now I want to see more detail for year 2024</span>
+<span class="n">year</span> <span class="o">=</span> <span class="mi">2024</span>
+<span class="n">data_year</span> <span class="o">=</span> <span class="n">onlyyears_data</span><span class="p">[</span><span class="n">onlyyears_data</span><span class="p">[</span><span class="s2">&quot;Year&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">year</span><span class="p">]</span>
+<span class="n">data_year</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Year</th>
+      <th>Unique Code</th>
+      <th>Institution Name</th>
+      <th>Campus Region</th>
+      <th>Institution Type_1</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2024</td>
+      <td>I117S1C35J4V1</td>
+      <td>IP IACC</td>
+      <td>Metropolitana</td>
+      <td>Institutos Profesionales</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2024</td>
+      <td>I45S2C4J1V1</td>
+      <td>UNIVERSIDAD DEL DESARROLLO</td>
+      <td>Metropolitana</td>
+      <td>Universidades</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2024</td>
+      <td>I31S2C41J1V1</td>
+      <td>UNIVERSIDAD AUTONOMA DE CHILE</td>
+      <td>Maule</td>
+      <td>Universidades</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2024</td>
+      <td>I70S1C900J1V1</td>
+      <td>UNIVERSIDAD DE CHILE</td>
+      <td>Metropolitana</td>
+      <td>Universidades</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2024</td>
+      <td>I143S27C34J2V1</td>
+      <td>IP AIEP</td>
+      <td>Metropolitana</td>
+      <td>Institutos Profesionales</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>1385809</th>
+      <td>2024</td>
+      <td>I88S1C227J1V1</td>
+      <td>UNIVERSIDAD TECNICA FEDERICO SANTA MARIA</td>
+      <td>Valparaíso</td>
+      <td>Universidades</td>
+    </tr>
+    <tr>
+      <th>1385810</th>
+      <td>2024</td>
+      <td>I116S36C51J1V1</td>
+      <td>IP SANTO TOMAS</td>
+      <td>Ñuble</td>
+      <td>Institutos Profesionales</td>
+    </tr>
+    <tr>
+      <th>1385811</th>
+      <td>2024</td>
+      <td>I86S1C1446J4V1</td>
+      <td>PONTIFICIA UNIVERSIDAD CATOLICA DE CHILE</td>
+      <td>Metropolitana</td>
+      <td>Universidades</td>
+    </tr>
+    <tr>
+      <th>1385812</th>
+      <td>2024</td>
+      <td>I312S1C116J4V1</td>
+      <td>CFT CENCO</td>
+      <td>Metropolitana</td>
+      <td>Centros de Formación Técnica</td>
+    </tr>
+    <tr>
+      <th>1385813</th>
+      <td>2024</td>
+      <td>I143S2C251J1V1</td>
+      <td>IP AIEP</td>
+      <td>Antofagasta</td>
+      <td>Institutos Profesionales</td>
+    </tr>
+  </tbody>
+</table>
+<p>1385814 rows × 5 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_sorted</span> <span class="o">=</span> <span class="n">data_year</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;Institution Name&quot;</span><span class="p">,</span> <span class="s2">&quot;Institution Type_1&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">size</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;Students Enrolled&quot;</span><span class="p">)</span>
+
+<span class="c1"># Sort the data by &#39;Students Enrolled&#39; in descending order</span>
+<span class="n">data_sorted2</span> <span class="o">=</span> <span class="n">data_sorted</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s2">&quot;Students Enrolled&quot;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">data_sorted2</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Institution Name</th>
+      <th>Institution Type_1</th>
+      <th>Students Enrolled</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>50</th>
+      <td>IP DUOC UC</td>
+      <td>Institutos Profesionales</td>
+      <td>105295</td>
+    </tr>
+    <tr>
+      <th>41</th>
+      <td>IP AIEP</td>
+      <td>Institutos Profesionales</td>
+      <td>87763</td>
+    </tr>
+    <tr>
+      <th>77</th>
+      <td>UNIVERSIDAD ANDRES BELLO</td>
+      <td>Universidades</td>
+      <td>64226</td>
+    </tr>
+    <tr>
+      <th>59</th>
+      <td>IP INACAP</td>
+      <td>Institutos Profesionales</td>
+      <td>57042</td>
+    </tr>
+    <tr>
+      <th>71</th>
+      <td>PONTIFICIA UNIVERSIDAD CATOLICA DE CHILE</td>
+      <td>Universidades</td>
+      <td>54939</td>
+    </tr>
+    <tr>
+      <th>122</th>
+      <td>UNIVERSIDAD SAN SEBASTIAN</td>
+      <td>Universidades</td>
+      <td>49509</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>CFT INACAP</td>
+      <td>Centros de Formación Técnica</td>
+      <td>46795</td>
+    </tr>
+    <tr>
+      <th>95</th>
+      <td>UNIVERSIDAD DE CHILE</td>
+      <td>Universidades</td>
+      <td>45324</td>
+    </tr>
+    <tr>
+      <th>64</th>
+      <td>IP LATINOAMERICANO DE COMERCIO EXTERIOR - IPLACEX</td>
+      <td>Institutos Profesionales</td>
+      <td>41248</td>
+    </tr>
+    <tr>
+      <th>38</th>
+      <td>CFT SANTO TOMAS</td>
+      <td>Centros de Formación Técnica</td>
+      <td>38729</td>
+    </tr>
+    <tr>
+      <th>80</th>
+      <td>UNIVERSIDAD AUTONOMA DE CHILE</td>
+      <td>Universidades</td>
+      <td>32279</td>
+    </tr>
+    <tr>
+      <th>58</th>
+      <td>IP IACC</td>
+      <td>Institutos Profesionales</td>
+      <td>32095</td>
+    </tr>
+    <tr>
+      <th>99</th>
+      <td>UNIVERSIDAD DE LAS AMERICAS</td>
+      <td>Universidades</td>
+      <td>31708</td>
+    </tr>
+    <tr>
+      <th>96</th>
+      <td>UNIVERSIDAD DE CONCEPCION</td>
+      <td>Universidades</td>
+      <td>28491</td>
+    </tr>
+    <tr>
+      <th>70</th>
+      <td>IP SANTO TOMAS</td>
+      <td>Institutos Profesionales</td>
+      <td>27468</td>
+    </tr>
+    <tr>
+      <th>123</th>
+      <td>UNIVERSIDAD SANTO TOMAS</td>
+      <td>Universidades</td>
+      <td>26929</td>
+    </tr>
+    <tr>
+      <th>105</th>
+      <td>UNIVERSIDAD DE SANTIAGO DE CHILE</td>
+      <td>Universidades</td>
+      <td>24725</td>
+    </tr>
+    <tr>
+      <th>119</th>
+      <td>UNIVERSIDAD MAYOR</td>
+      <td>Universidades</td>
+      <td>24527</td>
+    </tr>
+    <tr>
+      <th>100</th>
+      <td>UNIVERSIDAD DE LOS ANDES</td>
+      <td>Universidades</td>
+      <td>23316</td>
+    </tr>
+    <tr>
+      <th>125</th>
+      <td>UNIVERSIDAD TECNICA FEDERICO SANTA MARIA</td>
+      <td>Universidades</td>
+      <td>22652</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig7</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">data_sorted2</span><span class="p">,</span> 
+                   <span class="n">x</span><span class="o">=</span><span class="s2">&quot;Institution Name&quot;</span><span class="p">,</span> 
+                   <span class="n">y</span><span class="o">=</span><span class="s2">&quot;Students Enrolled&quot;</span><span class="p">,</span>
+                   <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Number of students enrolled in each Higher Education Institution in 2024&#39;</span><span class="p">)</span>
+<span class="n">fig7</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>                            <div id="ca336517-3b80-47dd-af8c-e7c5a25053d1" class="plotly-graph-div" style="height:525px; width:100%;"></div>            <script type="text/javascript">                require(["plotly"], function(Plotly) {                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("ca336517-3b80-47dd-af8c-e7c5a25053d1")) {                    Plotly.newPlot(                        "ca336517-3b80-47dd-af8c-e7c5a25053d1",                        [{"alignmentgroup":"True","hovertemplate":"Institution Name=%{x}\u003cbr\u003eStudents Enrolled=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"","marker":{"color":"#636efa","pattern":{"shape":""}},"name":"","offsetgroup":"","orientation":"v","showlegend":false,"textposition":"auto","x":["IP DUOC UC","IP AIEP","UNIVERSIDAD ANDRES BELLO","IP INACAP","PONTIFICIA UNIVERSIDAD CATOLICA DE CHILE","UNIVERSIDAD SAN SEBASTIAN","CFT INACAP","UNIVERSIDAD DE CHILE","IP LATINOAMERICANO DE COMERCIO EXTERIOR - IPLACEX","CFT SANTO TOMAS","UNIVERSIDAD AUTONOMA DE CHILE","IP IACC","UNIVERSIDAD DE LAS AMERICAS","UNIVERSIDAD DE CONCEPCION","IP SANTO TOMAS","UNIVERSIDAD SANTO TOMAS","UNIVERSIDAD DE SANTIAGO DE CHILE","UNIVERSIDAD MAYOR","UNIVERSIDAD DE LOS ANDES","UNIVERSIDAD TECNICA FEDERICO SANTA MARIA","UNIVERSIDAD DEL DESARROLLO","UNIVERSIDAD DIEGO PORTALES","IP DE CHILE","PONTIFICIA UNIVERSIDAD CATOLICA DE VALPARAISO","UNIVERSIDAD AUSTRAL DE CHILE","UNIVERSIDAD DE VALPARAISO","UNIVERSIDAD CATOLICA DE LA SANTISIMA CONCEPCION","UNIVERSIDAD CENTRAL DE CHILE","IP PROVIDENCIA","UNIVERSIDAD CATOLICA DEL MAULE","UNIVERSIDAD ADOLFO IBA\u00d1EZ","UNIVERSIDAD DE LA FRONTERA","UNIVERSIDAD DE TALCA","UNIVERSIDAD CATOLICA DE TEMUCO","UNIVERSIDAD CATOLICA DEL NORTE","UNIVERSIDAD DEL BIO-BIO","UNIVERSIDAD DE TARAPACA","UNIVERSIDAD DE LOS LAGOS","UNIVERSIDAD FINIS TERRAE","UNIVERSIDAD DE VI\u00d1A DEL MAR","UNIVERSIDAD ARTURO PRAT","UNIVERSIDAD BERNARDO O'HIGGINS","UNIVERSIDAD ALBERTO HURTADO","CFT DE ENAC","IP DR. VIRGINIO GOMEZ G.","UNIVERSIDAD DEL ALBA","UNIVERSIDAD TECNOLOGICA METROPOLITANA","UNIVERSIDAD DE ATACAMA","CFT PUCV","UNIVERSIDAD DE LA SERENA","CFT SAN AGUSTIN","UNIVERSIDAD DE O'HIGGINS","UNIVERSIDAD DE ARTES, CIENCIAS Y COMUNICACION - UNIACC","UNIVERSIDAD DE ANTOFAGASTA","UNIVERSIDAD DE PLAYA ANCHA DE CIENCIAS DE LA EDUCACION","UNIVERSIDAD CATOLICA CARDENAL RAUL SILVA HENRIQUEZ","CFT CEDUC - UCN","UNIVERSIDAD DE ACONCAGUA","CFT CENCO","IP IPG","IP LOS LEONES","UNIVERSIDAD ACADEMIA DE HUMANISMO CRISTIANO","IP ARCOS","UNIVERSIDAD DE MAGALLANES","UNIVERSIDAD METROPOLITANA DE CIENCIAS DE LA EDUCACION","UNIVERSIDAD GABRIELA MISTRAL","IP ESCUELA DE COMERCIO DE SANTIAGO","UNIVERSIDAD SEK","IP DEL VALLE CENTRAL","UNIVERSIDAD MIGUEL DE CERVANTES","IP DIEGO PORTALES","UNIVERSIDAD ADVENTISTA DE CHILE","CFT DE LA REGION DE ARICA Y PARINACOTA","CFT LOTA-ARAUCO","IP ESCUELA DE CONTADORES AUDITORES DE SANTIAGO","CFT DE LA REGION DE VALPARAISO","CFT DE LA REGION DE TARAPACA","CFT DE LA REGION DE LA ARAUCANIA","IP SAN SEBASTIAN","CFT JUAN BOHON","CFT DE LA REGION DE COQUIMBO","CFT INSTITUTO CENTRAL DE CAPACITACION EDUCACIONAL ICCE","UNIVERSIDAD TECNOLOGICA DE CHILE INACAP","IP INSTITUTO DE ESTUDIOS BANCARIOS GUILLERMO SUBERCASEAUX","CFT DE LA REGION DE LOS RIOS","CFT DE LA REGION DEL MAULE","UNIVERSIDAD LA REPUBLICA","CFT TEODORO WICKEL KLUWEN","CFT DE LA REGION DEL LIBERTADOR GENERAL BERNARDO O'HIGGINS","IP INSTITUTO NACIONAL DEL FUTBOL","IP ESCUELA MODERNA DE MUSICA","IP AGRARIO ADOLFO MATTHEI","IP EATRI","CFT MANPOWER","CFT ESCUELA DE COMERCIO","CFT DEL MEDIO AMBIENTE","CFT LAPLACE","IP INSTITUTO INTERNACIONAL DE ARTES CULINARIAS Y SERVICIOS","UNIVERSIDAD DE AYSEN","CFT DE LA REGION DEL BIO BIO","CFT DE LA REGION DE LOS LAGOS","IP CHILENO BRITANICO DE CULTURA","CFT DE LA REGION DE ANTOFAGASTA","UNIVERSIDAD BOLIVARIANA","CFT DE LA REGION METROPOLITANA DE SANTIAGO","IP PROJAZZ","CFT DE LA REGION DE ATACAMA","CFT DE LA REGION DE AYSEN DEL GENERAL CARLOS IBA\u00d1EZ DEL CAMPO","CFT ASISTE","CFT ESCUELA CULINARIA FRANCESA","IP ESUCOMEX","IP LIBERTADOR DE LOS ANDES","CFT ALPES","CFT DE LA REGION DE MAGALLANES Y ANTARTICA CHILENA","CFT PRODATA","IP ESCUELA DE MARINA MERCANTE PILOTO PARDO","CFT IPROSEC","CFT INSTITUTO SUPERIOR DE ESTUDIOS JURIDICOS CANON","IP DE CIENCIAS DE LA COMPUTACION ACUARIO DATA","CFT INSTITUTO SUPERIOR ALEMAN DE COMERCIO INSALCO","UNIVERSIDAD DE SANTIAGO DE CHILE (* CARRERA EN CONVENIO U. IBEROAMERICANA)","UNIVERSIDAD CATOLICA DEL MAULE (* CARRERA EN CONVENIO U. ARCIS)","IP ESCUELA DE CINE DE CHILE","CFT ACADEMIA CHILENA DE YOGA","CFT PROFASOC","IP CICERON","CFT CENTRO TECNOLOGICO SUPERIOR INFOMED","UNIVERSIDAD LOS LEONES"],"xaxis":"x","y":[105295,87763,64226,57042,54939,49509,46795,45324,41248,38729,32279,32095,31708,28491,27468,26929,24725,24527,23316,22652,22598,21520,19580,18662,18284,16936,16052,15535,14122,13564,12933,12300,12113,11810,11704,11619,10605,10455,10243,9792,9548,9023,8638,8555,8512,8470,8204,7894,7850,7654,7544,7536,7287,7124,6895,6104,5709,5247,4930,4554,4456,4288,4257,4237,4132,3948,3549,3170,3137,2980,2980,2843,2669,2069,1827,1550,1549,1480,1468,1464,1440,1413,1395,1376,1297,1259,1086,1016,972,887,830,821,807,789,745,707,702,669,662,592,528,495,471,416,409,390,337,321,270,260,237,213,188,167,134,122,96,77,70,68,59,56,44,40,22,20,17,4],"yaxis":"y","type":"bar"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmapgl":[{"type":"heatmapgl","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"}}},"xaxis":{"anchor":"y","domain":[0.0,1.0],"title":{"text":"Institution Name"}},"yaxis":{"anchor":"x","domain":[0.0,1.0],"title":{"text":"Students Enrolled"}},"legend":{"tracegroupgap":0},"title":{"text":"Number of students enrolled in each Higher Education Institution in 2024"},"barmode":"relative"},                        {"responsive": true}                    ).then(function(){
+                            
+var gd = document.getElementById('ca336517-3b80-47dd-af8c-e7c5a25053d1');
+var x = new MutationObserver(function (mutations, observer) {{
+        var display = window.getComputedStyle(gd).display;
+        if (!display || display === 'none') {{
+            console.log([gd, 'removed!']);
+            Plotly.purge(gd);
+            observer.disconnect();
+        }}
+}});
+
+// Listen for the removal of the full notebook cells
+var notebookContainer = gd.closest('#notebook-container');
+if (notebookContainer) {{
+    x.observe(notebookContainer, {childList: true});
+}}
+
+// Listen for the clearing of the current output cell
+var outputEl = gd.closest('.output');
+if (outputEl) {{
+    x.observe(outputEl, {childList: true});
+}}
+
+                        })                };                });            </script>        </div></div></div>
+</div>
+<p>This bar graph shows the institutions ordered by the number of students enrolled. In the top five, we see representation from all three types of institutions. Notably, IP DUOC UC, a Professional Institute, stands out as the institution with the highest number of enrolled students for 2024.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Now I want to see only the top 10 </span>
+<span class="n">max_num</span> <span class="o">=</span> <span class="mi">31349</span>
+<span class="n">top_10</span> <span class="o">=</span> <span class="n">data_sorted2</span><span class="p">[</span><span class="s2">&quot;Students Enrolled&quot;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">max_num</span>
+<span class="n">top_10df</span> <span class="o">=</span> <span class="n">data_sorted2</span><span class="p">[</span><span class="n">top_10</span><span class="p">]</span>
+<span class="n">top_10df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Institution Name</th>
+      <th>Institution Type_1</th>
+      <th>Students Enrolled</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>56</th>
+      <td>IP DUOC UC</td>
+      <td>Institutos Profesionales</td>
+      <td>97256</td>
+    </tr>
+    <tr>
+      <th>48</th>
+      <td>IP AIEP</td>
+      <td>Institutos Profesionales</td>
+      <td>94774</td>
+    </tr>
+    <tr>
+      <th>84</th>
+      <td>UNIVERSIDAD ANDRES BELLO</td>
+      <td>Universidades</td>
+      <td>57645</td>
+    </tr>
+    <tr>
+      <th>65</th>
+      <td>IP INACAP</td>
+      <td>Institutos Profesionales</td>
+      <td>46809</td>
+    </tr>
+    <tr>
+      <th>129</th>
+      <td>UNIVERSIDAD SAN SEBASTIAN</td>
+      <td>Universidades</td>
+      <td>44191</td>
+    </tr>
+    <tr>
+      <th>78</th>
+      <td>PONTIFICIA UNIVERSIDAD CATOLICA DE CHILE</td>
+      <td>Universidades</td>
+      <td>42912</td>
+    </tr>
+    <tr>
+      <th>102</th>
+      <td>UNIVERSIDAD DE CHILE</td>
+      <td>Universidades</td>
+      <td>42904</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>CFT INACAP</td>
+      <td>Centros de Formación Técnica</td>
+      <td>41103</td>
+    </tr>
+    <tr>
+      <th>45</th>
+      <td>CFT SANTO TOMAS</td>
+      <td>Centros de Formación Técnica</td>
+      <td>37562</td>
+    </tr>
+    <tr>
+      <th>87</th>
+      <td>UNIVERSIDAD AUTONOMA DE CHILE</td>
+      <td>Universidades</td>
+      <td>31349</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig7_24</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">top_10df</span><span class="p">,</span> 
+                   <span class="n">x</span><span class="o">=</span><span class="s2">&quot;Institution Name&quot;</span><span class="p">,</span> 
+                   <span class="n">y</span><span class="o">=</span><span class="s2">&quot;Students Enrolled&quot;</span><span class="p">,</span>
+                   <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Number of students enrolled in each Higher Education Institution in 2024&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">year</span> <span class="o">=</span> <span class="mi">2023</span>
+<span class="n">data_year</span> <span class="o">=</span> <span class="n">onlyyears_data</span><span class="p">[</span><span class="n">onlyyears_data</span><span class="p">[</span><span class="s2">&quot;Year&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">year</span><span class="p">]</span>
+<span class="n">data_sorted</span> <span class="o">=</span> <span class="n">data_year</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;Institution Name&quot;</span><span class="p">,</span> <span class="s2">&quot;Institution Type_1&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">size</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;Students Enrolled&quot;</span><span class="p">)</span>
+<span class="n">data_sorted2</span> <span class="o">=</span> <span class="n">data_sorted</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s2">&quot;Students Enrolled&quot;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">data_sorted2</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Institution Name</th>
+      <th>Institution Type_1</th>
+      <th>Students Enrolled</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>51</th>
+      <td>IP DUOC UC</td>
+      <td>Institutos Profesionales</td>
+      <td>100780</td>
+    </tr>
+    <tr>
+      <th>42</th>
+      <td>IP AIEP</td>
+      <td>Institutos Profesionales</td>
+      <td>93451</td>
+    </tr>
+    <tr>
+      <th>79</th>
+      <td>UNIVERSIDAD ANDRES BELLO</td>
+      <td>Universidades</td>
+      <td>59075</td>
+    </tr>
+    <tr>
+      <th>60</th>
+      <td>IP INACAP</td>
+      <td>Institutos Profesionales</td>
+      <td>51795</td>
+    </tr>
+    <tr>
+      <th>124</th>
+      <td>UNIVERSIDAD SAN SEBASTIAN</td>
+      <td>Universidades</td>
+      <td>48175</td>
+    </tr>
+    <tr>
+      <th>97</th>
+      <td>UNIVERSIDAD DE CHILE</td>
+      <td>Universidades</td>
+      <td>45248</td>
+    </tr>
+    <tr>
+      <th>73</th>
+      <td>PONTIFICIA UNIVERSIDAD CATOLICA DE CHILE</td>
+      <td>Universidades</td>
+      <td>43250</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>CFT INACAP</td>
+      <td>Centros de Formación Técnica</td>
+      <td>41946</td>
+    </tr>
+    <tr>
+      <th>39</th>
+      <td>CFT SANTO TOMAS</td>
+      <td>Centros de Formación Técnica</td>
+      <td>38762</td>
+    </tr>
+    <tr>
+      <th>59</th>
+      <td>IP IACC</td>
+      <td>Institutos Profesionales</td>
+      <td>35863</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">max_num</span> <span class="o">=</span> <span class="mi">35863</span>
+<span class="n">top_10</span> <span class="o">=</span> <span class="n">data_sorted2</span><span class="p">[</span><span class="s2">&quot;Students Enrolled&quot;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">max_num</span>
+<span class="n">top_10df</span> <span class="o">=</span> <span class="n">data_sorted2</span><span class="p">[</span><span class="n">top_10</span><span class="p">]</span>
+
+<span class="n">fig7_23</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">top_10df</span><span class="p">,</span> 
+                   <span class="n">x</span><span class="o">=</span><span class="s2">&quot;Institution Name&quot;</span><span class="p">,</span> 
+                   <span class="n">y</span><span class="o">=</span><span class="s2">&quot;Students Enrolled&quot;</span><span class="p">,</span>
+                   <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Number of students enrolled in each Higher Education Institution in 2023&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">year</span> <span class="o">=</span> <span class="mi">2022</span>
+<span class="n">data_year</span> <span class="o">=</span> <span class="n">onlyyears_data</span><span class="p">[</span><span class="n">onlyyears_data</span><span class="p">[</span><span class="s2">&quot;Year&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">year</span><span class="p">]</span>
+<span class="n">data_sorted</span> <span class="o">=</span> <span class="n">data_year</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;Institution Name&quot;</span><span class="p">,</span> <span class="s2">&quot;Institution Type_1&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">size</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;Students Enrolled&quot;</span><span class="p">)</span>
+<span class="n">data_sorted2</span> <span class="o">=</span> <span class="n">data_sorted</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s2">&quot;Students Enrolled&quot;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">data_sorted2</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Institution Name</th>
+      <th>Institution Type_1</th>
+      <th>Students Enrolled</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>56</th>
+      <td>IP DUOC UC</td>
+      <td>Institutos Profesionales</td>
+      <td>97256</td>
+    </tr>
+    <tr>
+      <th>48</th>
+      <td>IP AIEP</td>
+      <td>Institutos Profesionales</td>
+      <td>94774</td>
+    </tr>
+    <tr>
+      <th>84</th>
+      <td>UNIVERSIDAD ANDRES BELLO</td>
+      <td>Universidades</td>
+      <td>57645</td>
+    </tr>
+    <tr>
+      <th>65</th>
+      <td>IP INACAP</td>
+      <td>Institutos Profesionales</td>
+      <td>46809</td>
+    </tr>
+    <tr>
+      <th>129</th>
+      <td>UNIVERSIDAD SAN SEBASTIAN</td>
+      <td>Universidades</td>
+      <td>44191</td>
+    </tr>
+    <tr>
+      <th>78</th>
+      <td>PONTIFICIA UNIVERSIDAD CATOLICA DE CHILE</td>
+      <td>Universidades</td>
+      <td>42912</td>
+    </tr>
+    <tr>
+      <th>102</th>
+      <td>UNIVERSIDAD DE CHILE</td>
+      <td>Universidades</td>
+      <td>42904</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>CFT INACAP</td>
+      <td>Centros de Formación Técnica</td>
+      <td>41103</td>
+    </tr>
+    <tr>
+      <th>45</th>
+      <td>CFT SANTO TOMAS</td>
+      <td>Centros de Formación Técnica</td>
+      <td>37562</td>
+    </tr>
+    <tr>
+      <th>87</th>
+      <td>UNIVERSIDAD AUTONOMA DE CHILE</td>
+      <td>Universidades</td>
+      <td>31349</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">max_num</span> <span class="o">=</span> <span class="mi">31349</span>
+<span class="n">top_10</span> <span class="o">=</span> <span class="n">data_sorted2</span><span class="p">[</span><span class="s2">&quot;Students Enrolled&quot;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">max_num</span>
+<span class="n">top_10df</span> <span class="o">=</span> <span class="n">data_sorted2</span><span class="p">[</span><span class="n">top_10</span><span class="p">]</span>
+
+<span class="n">fig7_22</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">top_10df</span><span class="p">,</span> 
+                   <span class="n">x</span><span class="o">=</span><span class="s2">&quot;Institution Name&quot;</span><span class="p">,</span> 
+                   <span class="n">y</span><span class="o">=</span><span class="s2">&quot;Students Enrolled&quot;</span><span class="p">,</span>
+                   <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Number of students enrolled in each Higher Education Institution in 2022&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig7_24</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>                            <div id="536a374a-5103-4997-b6a1-227b48328bdc" class="plotly-graph-div" style="height:525px; width:100%;"></div>            <script type="text/javascript">                require(["plotly"], function(Plotly) {                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("536a374a-5103-4997-b6a1-227b48328bdc")) {                    Plotly.newPlot(                        "536a374a-5103-4997-b6a1-227b48328bdc",                        [{"alignmentgroup":"True","hovertemplate":"Institution Name=%{x}\u003cbr\u003eStudents Enrolled=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"","marker":{"color":"#636efa","pattern":{"shape":""}},"name":"","offsetgroup":"","orientation":"v","showlegend":false,"textposition":"auto","x":["IP DUOC UC","IP AIEP","UNIVERSIDAD ANDRES BELLO","IP INACAP","UNIVERSIDAD SAN SEBASTIAN","PONTIFICIA UNIVERSIDAD CATOLICA DE CHILE","UNIVERSIDAD DE CHILE","CFT INACAP","CFT SANTO TOMAS","UNIVERSIDAD AUTONOMA DE CHILE"],"xaxis":"x","y":[97256,94774,57645,46809,44191,42912,42904,41103,37562,31349],"yaxis":"y","type":"bar"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmapgl":[{"type":"heatmapgl","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"}}},"xaxis":{"anchor":"y","domain":[0.0,1.0],"title":{"text":"Institution Name"}},"yaxis":{"anchor":"x","domain":[0.0,1.0],"title":{"text":"Students Enrolled"}},"legend":{"tracegroupgap":0},"title":{"text":"Number of students enrolled in each Higher Education Institution in 2024"},"barmode":"relative"},                        {"responsive": true}                    ).then(function(){
+                            
+var gd = document.getElementById('536a374a-5103-4997-b6a1-227b48328bdc');
+var x = new MutationObserver(function (mutations, observer) {{
+        var display = window.getComputedStyle(gd).display;
+        if (!display || display === 'none') {{
+            console.log([gd, 'removed!']);
+            Plotly.purge(gd);
+            observer.disconnect();
+        }}
+}});
+
+// Listen for the removal of the full notebook cells
+var notebookContainer = gd.closest('#notebook-container');
+if (notebookContainer) {{
+    x.observe(notebookContainer, {childList: true});
+}}
+
+// Listen for the clearing of the current output cell
+var outputEl = gd.closest('.output');
+if (outputEl) {{
+    x.observe(outputEl, {childList: true});
+}}
+
+                        })                };                });            </script>        </div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig7_23</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>                            <div id="67963040-4d9b-4ffb-89f5-f8b9bfa92747" class="plotly-graph-div" style="height:525px; width:100%;"></div>            <script type="text/javascript">                require(["plotly"], function(Plotly) {                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("67963040-4d9b-4ffb-89f5-f8b9bfa92747")) {                    Plotly.newPlot(                        "67963040-4d9b-4ffb-89f5-f8b9bfa92747",                        [{"alignmentgroup":"True","hovertemplate":"Institution Name=%{x}\u003cbr\u003eStudents Enrolled=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"","marker":{"color":"#636efa","pattern":{"shape":""}},"name":"","offsetgroup":"","orientation":"v","showlegend":false,"textposition":"auto","x":["IP DUOC UC","IP AIEP","UNIVERSIDAD ANDRES BELLO","IP INACAP","UNIVERSIDAD SAN SEBASTIAN","UNIVERSIDAD DE CHILE","PONTIFICIA UNIVERSIDAD CATOLICA DE CHILE","CFT INACAP","CFT SANTO TOMAS","IP IACC"],"xaxis":"x","y":[100780,93451,59075,51795,48175,45248,43250,41946,38762,35863],"yaxis":"y","type":"bar"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmapgl":[{"type":"heatmapgl","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"}}},"xaxis":{"anchor":"y","domain":[0.0,1.0],"title":{"text":"Institution Name"}},"yaxis":{"anchor":"x","domain":[0.0,1.0],"title":{"text":"Students Enrolled"}},"legend":{"tracegroupgap":0},"title":{"text":"Number of students enrolled in each Higher Education Institution in 2023"},"barmode":"relative"},                        {"responsive": true}                    ).then(function(){
+                            
+var gd = document.getElementById('67963040-4d9b-4ffb-89f5-f8b9bfa92747');
+var x = new MutationObserver(function (mutations, observer) {{
+        var display = window.getComputedStyle(gd).display;
+        if (!display || display === 'none') {{
+            console.log([gd, 'removed!']);
+            Plotly.purge(gd);
+            observer.disconnect();
+        }}
+}});
+
+// Listen for the removal of the full notebook cells
+var notebookContainer = gd.closest('#notebook-container');
+if (notebookContainer) {{
+    x.observe(notebookContainer, {childList: true});
+}}
+
+// Listen for the clearing of the current output cell
+var outputEl = gd.closest('.output');
+if (outputEl) {{
+    x.observe(outputEl, {childList: true});
+}}
+
+                        })                };                });            </script>        </div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig7_22</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>                            <div id="8abdb5be-0ca7-482d-815a-fca1108d8df9" class="plotly-graph-div" style="height:525px; width:100%;"></div>            <script type="text/javascript">                require(["plotly"], function(Plotly) {                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("8abdb5be-0ca7-482d-815a-fca1108d8df9")) {                    Plotly.newPlot(                        "8abdb5be-0ca7-482d-815a-fca1108d8df9",                        [{"alignmentgroup":"True","hovertemplate":"Institution Name=%{x}\u003cbr\u003eStudents Enrolled=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"","marker":{"color":"#636efa","pattern":{"shape":""}},"name":"","offsetgroup":"","orientation":"v","showlegend":false,"textposition":"auto","x":["IP DUOC UC","IP AIEP","UNIVERSIDAD ANDRES BELLO","IP INACAP","UNIVERSIDAD SAN SEBASTIAN","PONTIFICIA UNIVERSIDAD CATOLICA DE CHILE","UNIVERSIDAD DE CHILE","CFT INACAP","CFT SANTO TOMAS","UNIVERSIDAD AUTONOMA DE CHILE"],"xaxis":"x","y":[97256,94774,57645,46809,44191,42912,42904,41103,37562,31349],"yaxis":"y","type":"bar"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmapgl":[{"type":"heatmapgl","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"}}},"xaxis":{"anchor":"y","domain":[0.0,1.0],"title":{"text":"Institution Name"}},"yaxis":{"anchor":"x","domain":[0.0,1.0],"title":{"text":"Students Enrolled"}},"legend":{"tracegroupgap":0},"title":{"text":"Number of students enrolled in each Higher Education Institution in 2022"},"barmode":"relative"},                        {"responsive": true}                    ).then(function(){
+                            
+var gd = document.getElementById('8abdb5be-0ca7-482d-815a-fca1108d8df9');
+var x = new MutationObserver(function (mutations, observer) {{
+        var display = window.getComputedStyle(gd).display;
+        if (!display || display === 'none') {{
+            console.log([gd, 'removed!']);
+            Plotly.purge(gd);
+            observer.disconnect();
+        }}
+}});
+
+// Listen for the removal of the full notebook cells
+var notebookContainer = gd.closest('#notebook-container');
+if (notebookContainer) {{
+    x.observe(notebookContainer, {childList: true});
+}}
+
+// Listen for the clearing of the current output cell
+var outputEl = gd.closest('.output');
+if (outputEl) {{
+    x.observe(outputEl, {childList: true});
+}}
+
+                        })                };                });            </script>        </div></div></div>
+</div>
+<p>With these three graphs, I aimed to analyze whether the top 10 institutions, measured by enrollment numbers, have changed over the past three years. The top five institutions have remained consistent during this period, with IP DUOC UC maintaining the top position, followed by IP AIEP, Andrés Bello University, IP INACAP, and San Sebastián University. However, in the lower half of the top 10, we observe more variation over time.</p>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "conda-base-py"
+        },
+        kernelOptions: {
+            name: "conda-base-py",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'conda-base-py'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="project_1.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Project 1</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="project_3.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Project 3</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Josefina De Solminihac
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
