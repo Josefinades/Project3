@@ -12,3 +12,6 @@ build:
 
 conda:
   environment: environment.yml
+
+output:
+  html: $READTHEDOCS_OUTPUT/html
